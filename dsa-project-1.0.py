@@ -1,5 +1,5 @@
 # Created by jack1806
-
+# On HP notebook using Linux Kali 2.0
 # DSA project Winter Sem 16-17
 
 #!/usr/bin/python
