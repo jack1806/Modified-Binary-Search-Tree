@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Add An entry</title>
+  <link href="{{url_for('static',filename='style.css')}}" rel=stylesheet type=text/css>
+</head>
+<script language="javascript">
+function onClick(button){
+  button.blur();
+  var aadhaar = document.getElementsByName("aadhaar")[0].value;
+  var name = document.getElementsByName("name")[0].value;
+  if(name=="")
+    alert("Enter the holder's Name");
+  else if(aadhaar=="")
+    alert("Invalid aadhaar Number");
+  else
+  window.open("/add/"+aadhaar+"/"+name,"_self");
+}
+function onMouseOver(button){
+  button.style.background = "#0099ff";
+  button.style.color = "#fff";
+  return 0;
+}
+function onMouseDown(button){
+  button.style.background = "#fff";
+  button.style.color = "#0099ff";
+}
+</script>
+
+<body bgcolor="#c2c2a3">
+  <center>
+    <div class="container">
+      <div width=500px class="info">
+      Aadhaar Number &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="input" type="text" value="" name="aadhaar"></div>
+      <div width=500px class="info">
+      Holder name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="input" type="text" value="" name="name"><br><br><br><br></div>
+      <input id="button" type="button" value="Submit" onClick="onClick(this)" onmouseover="onMouseOver(this)" onmouseout="onMouseDown(this)">
+    </div>
+  </center>
+</body>
+</html>

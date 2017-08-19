@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>Search For Aadhaar</title>
+  <link href="{{url_for('static',filename='style.css')}}" rel=stylesheet type=text/css>
+</head>
+<script language="javascript">
+function onClick(button){
+  button.blur();
+  var search = document.getElementsByName("searchValue")[0].value;
+  if(search=="" || !/[^a-zA-Z]/.test(search))
+    alert("Invalid Search Value");
+  else if(!/[^a-zA-Z]/.test([parent]))
+    alert("Invalid Search Value");
+  else
+  window.open("/search/"+search,"_self");
+}
+function onMouseOver(button){
+  button.style.background = "#0099ff";
+  button.style.color = "#fff";
+  return 0;
+}
+function onMouseDown(button){
+  button.style.background = "#fff";
+  button.style.color = "#0099ff";
+}
+</script>
+<body bgcolor="#c2c2a3">
+  <center>
+  <div class="container">
+    <div width=500px class="info">
+    Search Value &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="input" type="text" value="" name="searchValue"></div>
+    <div width=500px class="info">
+    <br><br><br><br></div>
+    <input id="button" type="button" value="Submit" onClick="onClick(this)" onmouseover="onMouseOver(this)" onmouseout="onMouseDown(this)">
+  </div>
+  </center>
+</body>
+</html>

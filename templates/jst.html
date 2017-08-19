@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>J.S.T</title>
+  <link href="{{url_for('static',filename='style.css')}}" rel=stylesheet type=text/css>
+</head>
+<script language="javascript">
+function onClick(button){
+  button.blur();
+  window.open("/jst/"+button.value,"_self");
+}
+function onMouseOver(button){
+  button.style.background = "#1ecd97";
+  button.style.color = "#fff";
+  return 0;
+}
+function onMouseDown(button){
+  button.style.background = "#fff";
+  button.style.color = "#1ecd97";
+}
+</script>
+<body>
+  <center>
+    <div>
+      <input style="margin-top:50px;font-size:25px" type="button" id="button" value="{{parent}}" name="submit">
+    </div>
+    <div class="container" style="width:auto">
+      {%for i in childs%}
+      {% if i!=None %}
+      <input type="button" class="input" value="{{i.value}}" onmouseover="onMouseOver(this)" onmouseout="onMouseDown(this)" onClick="onClick(this)">
+      {% else %}
+      <input type="button" class="input" value="None" onmouseover="onMouseOver(this)" onmouseout="onMouseDown(this)" onClick="onClick(this)">
+      {% endif %}
+      {% endfor %}
+    </div>
+</body>
+</html>

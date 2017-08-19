@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Aadhaar Search</title>
+  <link href="{{url_for('static',filename='style.css')}}" rel=stylesheet type=text/css>
+  <script language="javascript">
+  function onMouseOver(button){
+    button.style.background = "#0099ff";
+    button.style.color = "#fff";
+    return 0;
+  }
+  function onMouseDown(button){
+    button.style.background = "#fff";
+    button.style.color = "#0099ff";
+  }
+  function onClick(url){
+    url.blur();
+    window.open("/"+url.name,"_self");
+  }
+  </script>
+</head>
+<!--{{url_for('static',filename='symptoms.html')}}-->
+<body bgcolor="#c2c2a3">
+  <center>
+    <h1 style="margin-top:50px;">Click on the icon to Continue</h1><br>
+    <div class="container">
+    <input id="button" type="button" value="View Tree in JST" name="jst" onmouseover="onMouseOver(this)" onmouseout="onMouseDown(this)" onclick="onClick(this)"><br>
+    <input id="button" type="button" value="Search Entry" name="search" onmouseover="onMouseOver(this)" onmouseout="onMouseDown(this)" onclick="onClick(this)"></a><br>
+    <input id="button" type="button" value="Add a Entry" name="add" onmouseover="onMouseOver(this)" onmouseout="onMouseDown(this)" onclick="onClick(this)"><br>
+    <input id="button" type="button" value="View all Entries" name="view" onmouseover="onMouseOver(this)" onmouseout="onMouseDown(this)" onclick="onClick(this)"><br>
+  </div>
+  </center>
+</body>
+</html>
